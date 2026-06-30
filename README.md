@@ -13,6 +13,14 @@ This folder contains a special birthday greeting page built with HTML, CSS, and 
 1. Open `happy-birthday/index.html` in your browser.
 2. Click the **Show Your Wish** button.
 
+## GitHub Pages URL
+
+If you publish this repository with GitHub Pages, the birthday page is available at:
+
+`https://<USERNAME>.github.io/<REPO_NAME>/happy-birthday/`
+
+Replace `<USERNAME>` and `<REPO_NAME>` with your GitHub username and repository name.
+
 ## Notes
 
 - This README is specific to the birthday page only.
