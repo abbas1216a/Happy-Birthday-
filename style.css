@@ -1,0 +1,112 @@
+:root {
+  --bg: #0b1f3f;
+  --card: rgba(255, 255, 255, 0.15);
+  --text: #ffffff;
+  --accent: #ff7aa3;
+  --accent2: #77d6ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #5b7dd0 0%, #0b1f3f 55%, #08122a 100%);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  width: min(700px, 90vw);
+  padding: 2.5rem;
+  border-radius: 30px;
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.balloons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.balloon {
+  width: 80px;
+  height: 110px;
+  border-radius: 50% 50% 45% 45%;
+  position: absolute;
+  bottom: -20px;
+  opacity: 0.95;
+  animation: float 6s ease-in-out infinite;
+}
+
+.balloon-1 { left: 15%; background: #ff7aa3; animation-delay: 0s; }
+.balloon-2 { left: 35%; background: #ffd166; animation-delay: 1.1s; }
+.balloon-3 { left: 60%; background: #77d6ff; animation-delay: 0.6s; }
+.balloon-4 { left: 78%; background: #a97cff; animation-delay: 1.8s; }
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-inline: auto 1rem;
+}
+
+button {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  color: #111827;
+  padding: 0.95rem 2rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(255, 122, 163, 0.25);
+}
+
+.wish-text {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.wish-text.visible {
+  opacity: 1;
+}
